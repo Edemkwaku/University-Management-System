@@ -1,0 +1,48 @@
+﻿@page
+@model University_Management_System.Pages.Dashbord.Student.IndexModel
+@{
+}
+
+<br />
+<div class="">
+    <h2>List of Student</h2>
+    <a class="btn btn-primary btn-sm" href="/Dashbord/Student/Create">New Student</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>FName</th>
+                <th>LName</th>
+                <th>Birth Date</th>
+                <th>Phone</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip code</th>
+                <th>Faculty</th>
+                <th>Hostel</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var student in Model.listStudents)
+            {
+            <tr>
+                <td>@student.student_id</td>
+                <td>@student.fname</td>
+                <td>@student.lname</td>
+                <td>@student.DoB</td>
+                <td>@student.phone</td>
+                <td>@student.city</td>
+                <td>@student.state</td>
+                <td>@student.digital_add</td>
+                <td>@student.faculty</td>
+                <td>@student.hostel</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Dashboard/Student/Edit=@student.student_id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/Dashboard/Student/DeleteStudent=@student.student_id">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
