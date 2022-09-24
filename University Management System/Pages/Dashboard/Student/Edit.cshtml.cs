@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MySql.Data.MySqlClient;
 
-namespace University_Management_System.Pages.Dashbord.Student
+namespace University_Management_System.Pages.Dashboard.Student
 {
     public class EditModel : PageModel
         
@@ -16,7 +16,7 @@ namespace University_Management_System.Pages.Dashbord.Student
         public string successMessage = "";
         public void OnGet()
         {
-            string id = Request.Form["student_id"];
+            string id = Request.Query["id"];
 
             try
             {
@@ -24,16 +24,17 @@ namespace University_Management_System.Pages.Dashbord.Student
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    string sql = "SELECT * FROM student WHERE stu_id=@id";
+                    string sql = "SELECT * FROM student WHERE stu_id=@stu_id";
 
                     using (MySqlCommand command = new MySqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@id", id);
+                        command.Parameters.AddWithValue("@stu_id", id);
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.Read())
                             {
-                                StudentInfo studentInfo = new StudentInfo();
+                                //StudentInfo studentInfo = new StudentInfo();
+                               
                                 studentInfo.student_id = reader.GetString(0);
                                 studentInfo.fname = reader.GetString(1);
                                 studentInfo.lname = reader.GetString(2);
@@ -83,12 +84,11 @@ namespace University_Management_System.Pages.Dashbord.Student
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    string sql = "INSERT INTO student(`stu_id`, `fname`, `lname`, `DoB`, `phone`, `city`, `state`, `pin_code`, `faculty`, `hostel`)" +
-                        "VALUES(@stu_id,@fname,@lname,@DoB,@phone,@city,@state,@pin_code,@faculty,@hostel);";
+                    string sql = "UPDATE student SET `fname`=@fname, `lname`=@lname, `DoB`=@DoB, `phone`=@phone,"+
+                        "`city`=@city, `state`=@state, `pin_code`=@pin_code, `faculty`=@faculty, `hostel`=@hostel WHERE stu_id=@stu_id;";
 
                     using (MySqlCommand command = new MySqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@stu_id", studentInfo.student_id);
                         command.Parameters.AddWithValue("@fname", studentInfo.fname);
                         command.Parameters.AddWithValue("@lname", studentInfo.lname);
                         command.Parameters.AddWithValue("@DoB", studentInfo.DoB);
@@ -98,6 +98,7 @@ namespace University_Management_System.Pages.Dashbord.Student
                         command.Parameters.AddWithValue("@pin_code", studentInfo.digital_add);
                         command.Parameters.AddWithValue("@faculty", studentInfo.faculty);
                         command.Parameters.AddWithValue("@hostel", studentInfo.hostel);
+                        command.Parameters.AddWithValue("@stu_id", studentInfo.student_id);
 
                         command.ExecuteNonQuery();
                     }
@@ -106,7 +107,7 @@ namespace University_Management_System.Pages.Dashbord.Student
             }
             catch (Exception ex)
             {
-                errorMessage = ex.Message;
+                errorMessage = ex.ToString();
                 return;
             }
 

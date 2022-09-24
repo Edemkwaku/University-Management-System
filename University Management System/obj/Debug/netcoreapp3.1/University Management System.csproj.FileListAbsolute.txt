@@ -119,10 +119,10 @@ C:\Users\Edem\Desktop\University Management System\University Management System\
 C:\Users\Edem\Desktop\University Management System\University Management System\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard\Hostel\EditHostel.cshtml.g.cs
 C:\Users\Edem\Desktop\University Management System\University Management System\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard\Hostel\Index.cshtml.g.cs
 C:\Users\Edem\Desktop\University Management System\University Management System\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard\Student\Create.cshtml.g.cs
-C:\Users\Edem\Desktop\University Management System\University Management System\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard\Student\DeleteStudent.cshtml.g.cs
 C:\Users\Edem\Desktop\University Management System\University Management System\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard\Student\Edit.cshtml.g.cs
 C:\Users\Edem\Desktop\University Management System\University Management System\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard\Student\Index.cshtml.g.cs
 C:\Users\Edem\Desktop\University Management System\University Management System\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard\Subject\CreateSubject.cshtml.g.cs
 C:\Users\Edem\Desktop\University Management System\University Management System\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard\Subject\DeleteSubject.cshtml.g.cs
 C:\Users\Edem\Desktop\University Management System\University Management System\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard\Subject\EditSubject.cshtml.g.cs
 C:\Users\Edem\Desktop\University Management System\University Management System\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard\Subject\Index.cshtml.g.cs
+C:\Users\Edem\Desktop\University Management System\University Management System\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard\Student\Delete.cshtml.g.cs

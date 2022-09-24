@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body class=" d-flex flex-column">
+<body class="">
     <header class="flex-grow-1">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -17,11 +17,20 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    @{ 
+                        if(aut)
+                    }
+                    <ul class="navbar-nav flex-grow">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Auth/Login">Sign in</a>
+                        </li>
+                    </ul>
+
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                       
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Dashboard/Student/Index">Student</a>
                         </li>
@@ -32,11 +41,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Dashboard/Course/Index">Course</a>
                         </li>
                     </ul>
+
+
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container flex-lg-grow-1">
+    <div class="pl-3 pr-3">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -44,7 +55,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - University_Management_System - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2022 - UEW Management System - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 

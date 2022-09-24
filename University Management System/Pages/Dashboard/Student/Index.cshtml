@@ -1,15 +1,16 @@
 ﻿@page
-@model University_Management_System.Pages.Dashbord.Student.IndexModel
+@model University_Management_System.Pages.Dashboard.Student.IndexModel
 @{
 }
 
 <br />
-<div class="">
+<div class="pr-5 pl-5 mr-3 ml-3">
     <h2>List of Student</h2>
-    <a class="btn btn-primary btn-sm" href="/Dashbord/Student/Create">New Student</a>
+    <a class="btn btn-primary btn-sm mt-3" href="/Dashboard/Student/Create">New Student</a>
     <table class="table">
         <thead>
             <tr>
+                
                 <th>Index</th>
                 <th>FName</th>
                 <th>LName</th>
@@ -27,6 +28,7 @@
             @foreach(var student in Model.listStudents)
             {
             <tr>
+             
                 <td>@student.student_id</td>
                 <td>@student.fname</td>
                 <td>@student.lname</td>
@@ -38,8 +40,8 @@
                 <td>@student.faculty</td>
                 <td>@student.hostel</td>
                 <td>
-                    <a class="btn btn-primary btn-sm" href="/Dashboard/Student/Edit=@student.student_id">Edit</a>
-                    <a class="btn btn-danger btn-sm" href="/Dashboard/Student/DeleteStudent=@student.student_id">Delete</a>
+                    <a class="btn btn-primary btn-sm" href="/Dashboard/Student/Edit?id=@student.student_id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/Dashboard/Student/Delete?id=@student.student_id">Delete</a>
                 </td>
             </tr>
             }

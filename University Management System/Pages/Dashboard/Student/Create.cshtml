@@ -1,5 +1,5 @@
 ﻿@page
-@model University_Management_System.Pages.Dashbord.Student.CreateModel
+@model University_Management_System.Pages.Dashboard.Student.CreateModel
 @{
 }
 
@@ -8,93 +8,96 @@
 
     @if (Model.errorMessage.Length > 0)
     {
-<div class="alert alert-warning alert-dismissible fade show">
-    <strong>@Model.errorMessage</strong>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-    }
-
-
-<form method="post">
-    <div class="row">
-        <div class="mb-3 mt-3 col">
-            <label for="student_id" class="form-label">Student Index:</label>
-            <input type="text" class="form-control" id="stu_id" placeholder="Enter username" name="student_id" value="@Model.studentInfo.student_id">
-        </div>
-
-        <div class="mb-3 mt-3 col">
-            <label for="fname" class="form-label">First name:</label>
-            <input type="text" class="form-control" id="fname" placeholder="Enter first name" name="fname" value="@Model.studentInfo.fname">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="mb-3 mt-3 col">
-            <label for="lname" class="form-label">Last name:</label>
-            <input type="text" class="form-control" id="fname" placeholder="Enter last name" name="lname" value="@Model.studentInfo.lname">
-        </div>
-
-        <div class="mb-3 mt-3 col">
-            <label for="pnone" class="form-label">Phone:</label>
-            <input type="text" class="form-control" id="phone" placeholder="Enter phone number" name="phone" value="@Model.studentInfo.phone">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="mb-3 mt-3 col">
-            <label for="DoB" class="form-label">Date of Birth:</label>
-            <input type="date" class="form-control" id="DoB" placeholder="Date of Birth" name="DoB" value="@Model.studentInfo.DoB">
-        </div>
-
-        <div class="mb-3 mt-3 col">
-            <label for="city" class="form-label">City:</label>
-            <input type="text" class="form-control" id="city" placeholder="Enter city" name="city" value="@Model.studentInfo.city">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="mb-3 mt-3 col">
-            <label for="state" class="form-label">State:</label>
-            <input type="text" class="form-control" id="state" placeholder="Enter state" name="state" value="@Model.studentInfo.state">
-        </div>
-
-        <div class="mb-3 mt-3 col">
-            <label for="digital_add" class="form-label">Digital address:</label>
-            <input type="text" class="form-control" id="city" placeholder="Enter digital address" name="digital_add" value="@Model.studentInfo.digital_add">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="mb-3 mt-3 col">
-            <label for="faculty" class="form-label">Faculty:</label>
-            <input type="text" class="form-control" id="faculty" placeholder="Enter faculty" name="faculty" value="@Model.studentInfo.faculty">
-        </div>
-
-        <div class="mb-3 mt-3 col">
-            <lable for="hostel" class="form-label">Hostel:</lable><br />
-            <select class="form-select form-select-lg mt-3">
-                <option value="@Model.studentInfo.hostel" name="" class="form-control  ">Select Hostel</option>
-            </select>
-        </div>
-    </div>
-
-    @if (Model.successMessage.Length > 0)
-    {
-        <div class="alert alert-success alert-dismissible fade show">
-            <strong>@Model.successMessage</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    }
-
     <div class="row mb-3">
-        <div class="offset-sm-3 col-sm-3 d-grid">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-        <div class="offset-sm-3 col-sm-3 d-grid">
-            <button type="submit" class="btn btn-outline-primary">Cancel</button>
+        <div class="col-sm-9">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>@Model.errorMessage</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+         </div>
+    </div>
+
+    }
+
+
+    <form method="post" autocomplete="">
+        <div class="row">
+            <div class="mb-3 mt-3 col">
+                <label for="student_id" class="form-label">Student Index:</label>
+                <input type="text" class="form-control" id="stu_id" placeholder="Enter username" name="student_id" value="@Model.studentInfo.student_id">
+            </div>
+
+            <div class="mb-3 mt-3 col">
+                <label for="fname" class="form-label">First name:</label>
+                <input type="text" class="form-control" id="fname" placeholder="Enter first name" name="fname" value="@Model.studentInfo.fname">
+            </div>
         </div>
 
-    </div>
-    
-</form>
+        <div class="row">
+            <div class="mb-3 mt-3 col">
+                <label for="lname" class="form-label">Last name:</label>
+                <input type="text" class="form-control" id="fname" placeholder="Enter last name" name="lname" value="@Model.studentInfo.lname">
+            </div>
+
+            <div class="mb-3 mt-3 col">
+                <label for="pnone" class="form-label">Phone:</label>
+                <input type="text" class="form-control" id="phone" placeholder="Enter phone number" name="phone" value="@Model.studentInfo.phone">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mb-3 mt-3 col">
+                <label for="DoB" class="form-label">Date of Birth:</label>
+                <input type="date" class="form-control" id="DoB" placeholder="Date of Birth" name="DoB" value="@Model.studentInfo.DoB">
+            </div>
+
+            <div class="mb-3 mt-3 col">
+                <label for="city" class="form-label">City:</label>
+                <input type="text" class="form-control" id="city" placeholder="Enter city" name="city" value="@Model.studentInfo.city">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mb-3 mt-3 col">
+                <label for="state" class="form-label">State:</label>
+                <input type="text" class="form-control" id="state" placeholder="Enter state" name="state" value="@Model.studentInfo.state">
+            </div>
+
+            <div class="mb-3 mt-3 col">
+                <label for="digital_add" class="form-label">Digital address:</label>
+                <input type="text" class="form-control" id="city" placeholder="Enter digital address" name="digital_add" value="@Model.studentInfo.digital_add">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mb-3 mt-3 col">
+                <label for="faculty" class="form-label">Faculty:</label>
+                <input type="text" class="form-control" id="faculty" placeholder="Enter faculty" name="faculty" value="@Model.studentInfo.faculty">
+            </div>
+
+            <div class="mb-3 mt-3 col">
+                <lable for="hostel" class="form-label pb-3">Hostel:</lable>
+                <input type="text" class="form-control" id="hostel" placeholder="Enter hostel" name="hostel" value="@Model.studentInfo.hostel">
+            </div>
+        </div>
+
+        @if (Model.successMessage.Length > 0)
+        {
+            <div class="alert alert-success alert-dismissible fade show">
+                <strong>@Model.successMessage</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <div class="row mb-3 mt-3">
+            <div class=" col">
+                <button type="submit" class="btn btn-primary btn-block ">Submit</button>
+            </div>
+            <div class="col">
+                <button type="reset" class="btn btn-outline-danger btn-block">Cancel</button>
+            </div>
+
+        </div>
+
+    </form>
 </div>

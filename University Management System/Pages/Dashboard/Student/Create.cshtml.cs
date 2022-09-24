@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MySql.Data.MySqlClient;
 
-namespace University_Management_System.Pages.Dashbord.Student
+namespace University_Management_System.Pages.Dashboard.Student
 {
     public class CreateModel : PageModel
     {

@@ -2,3 +2,68 @@
 @model University_Management_System.Pages.Dashbord.Course.EditCourseModel
 @{
 }
+
+
+<div class="container pr-3 pl-3 mt-3">
+    <div class="container pr-3 pl-3">
+        <h2>Edit Course</h2>
+
+        @if (Model.errorMessage.Length > 0)
+        {
+            <div class="row mb-3">
+                <div class="col-sm-9">
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>@Model.errorMessage</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+        <form method="post" autocomplete="">
+
+            <div class="mb-3 mt-3 col">
+                <input type="hidden" class="form-control" id="course_id" placeholder="Enter Course code" name="course_id" value="@Model.courseInfo.id">
+            </div>
+
+            <div class="mb-3 mt-3 col">
+                <label for="course_name" class="form-label">Course name:</label>
+                <input type="text" class="form-control" id="course_name" placeholder="Enter course name" name="course_name" value="@Model.courseInfo.course_name">
+            </div>
+
+
+
+            <div class="mb-3 mt-3 col">
+                <label for="duration" class="form-label">Duration:</label>
+                <input type="number" class="form-control" id="duration" placeholder="Enter Duration" name="duration" value="@Model.courseInfo.duration">
+            </div>
+
+            <div class="mb-3 mt-3 col">
+                <label for="dept" class="form-label">Department:</label>
+                <input type="text" class="form-control" id="phone" placeholder="Enter department" name="dept" value="@Model.courseInfo.dept">
+            </div>
+
+
+
+            @if (Model.successMessage.Length > 0)
+            {
+                <div class="alert alert-success alert-dismissible fade show">
+                    <strong>@Model.successMessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            <div class="row mb-3 mt-3">
+                <div class=" col">
+                    <button type="submit" class="btn btn-primary btn-block ">Submit</button>
+                </div>
+                <div class="col">
+                    <button type="reset" class="btn btn-outline-danger btn-block">Cancel</button>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+    </div>

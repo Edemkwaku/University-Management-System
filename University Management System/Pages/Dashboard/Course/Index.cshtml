@@ -2,3 +2,37 @@
 @model University_Management_System.Pages.Dashbord.Course.IndexModel
 @{
 }
+
+<br />
+<div class="container pr-3 pl-3">
+    <div class="container pr-3 pl-3">
+        <h2>List of Courses</h2>
+        <a class="btn btn-primary btn-sm mt-3" href="/Dashboard/Course/CreateCourse">New Course</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>COURSE NAME</th>
+                    <th>DURATION</th>
+                    <th>DEPARTMENT</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var course in Model.listCourses)
+                {
+                    <tr>
+                        <td>@course.id</td>
+                        <td>@course.course_name</td>
+                        <td>@course.duration</td>
+                        <td>@course.dept</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" href="/Dashboard/Course/EditCourse?id=@course.id">Edit</a>
+                            <a class="btn btn-danger btn-sm" href="/Dashboard/Course/DeleteCourse?id=@course.id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    </div>

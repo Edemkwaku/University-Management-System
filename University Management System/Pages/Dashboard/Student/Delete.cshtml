@@ -2,22 +2,22 @@
 
 @using MySql.Data.MySqlClient;
 
-@{
+@{ 
 
     try
     {
         string id = Request.Query["id"];
-
+        
 
         string connectionString = "server=localhost;port=3306;username=root;password=;database=schooldb";
         using (MySqlConnection connection = new MySqlConnection(connectionString))
         {
             connection.Open();
-            string sql = "DELETE FROM course WHERE course_id=@course_id";
+            string sql = "DELETE FROM student WHERE stu_id=@stu_id";
 
             using (MySqlCommand command = new MySqlCommand(sql, connection))
             {
-                command.Parameters.AddWithValue("@course_id", id);
+                command.Parameters.AddWithValue("@stu_id", id);
                 command.ExecuteNonQuery();
             }
         }
@@ -28,6 +28,8 @@
     }
 
 
-    Response.Redirect("/Dashboard/Course/Index");
+    Response.Redirect("/Dashboard/Student/Index");
+
+}
 
 }

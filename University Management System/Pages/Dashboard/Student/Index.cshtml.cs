@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using MySql.Data.MySqlClient;
 
 
-namespace University_Management_System.Pages.Dashbord.Student
+namespace University_Management_System.Pages.Dashboard.Student
 {
     public class IndexModel : PageModel
     {
@@ -30,16 +30,18 @@ namespace University_Management_System.Pages.Dashbord.Student
                             while (reader.Read())
                             {
                                 StudentInfo studentInfo = new StudentInfo();
+
                                 studentInfo.student_id = reader.GetString(0);
                                 studentInfo.fname = reader.GetString(1);
                                 studentInfo.lname = reader.GetString(2);
-                                studentInfo.DoB = reader.GetDateTime(3).ToString().Substring(0,9);
+                                studentInfo.DoB = reader.GetDateTime(3).ToString().Substring(0, 9);
                                 studentInfo.phone = reader.GetString(4);
                                 studentInfo.city = reader.GetString(5);
                                 studentInfo.state = reader.GetString(6);
                                 studentInfo.digital_add = reader.GetString(7);
                                 studentInfo.faculty = reader.GetString(8);
                                 studentInfo.hostel = reader.GetString(9);
+
 
                                 listStudents.Add(studentInfo);
                             }
@@ -57,6 +59,7 @@ namespace University_Management_System.Pages.Dashbord.Student
 
     public class StudentInfo
     {
+        
         public string student_id;
         public string fname;
         public string lname;
